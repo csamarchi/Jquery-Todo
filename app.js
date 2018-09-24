@@ -26,5 +26,13 @@ const completedTodo = (event) => {
 
   $('#col-2').append($currentTodo);
 
-  
+  $(event.currentTarget).text('delete');
+
+  $(event.currentTarget).off('click').on('click', removeTodo)
+}
+
+const removeTodo = (event) => {
+    $(event.currentTarget).parent().remove();
+
+
 }
